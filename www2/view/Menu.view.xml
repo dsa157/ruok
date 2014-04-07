@@ -1,0 +1,23 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="com.dsa157.ruok.Menu" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Menu">
+		<content>
+		<VBox class="vb centered">
+			<Image src="img/ruok.png" />
+			<Button id="settings" class="menuBtn" text="Settings" press="onPressSettings" icon="sap-icon://action-settings" />	
+			<Button id="mySchedule" class="menuBtn" text="My Schedule" press="onPressMySchedule" icon="sap-icon://calendar" />	
+			<Button id="recipients" class="menuBtn" text="Recipients" press="onPressRecipients" icon="sap-icon://person-placeholder" />	
+			<Button id="contacts" class="menuBtn" text="Contacts" press="onPressContacts" icon="sap-icon://person-placeholder" />	
+			<Button id="challenges" class="menuBtn" text="Challenges" press="onPressChallenges" icon="sap-icon://puzzle" />	
+			<Button id="reports" class="menuBtn" text="Reports" press="onPressReports" icon="sap-icon://pie-chart" />	
+		</VBox>
+		</content>
+		<footer>
+				<Bar>
+        		<contentLeft>
+					<Button id="back" text="Back" press="onPressBack" icon="sap-icon://nav-back" />	
+        		</contentLeft>
+        		</Bar>
+		</footer>
+	</Page>	
+</core:View>

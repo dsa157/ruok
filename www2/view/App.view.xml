@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<core:View controllerName="com.dsa157.ruok.view.App" xmlns:core="sap.ui.core"
+    xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+
+<App id="theApp">
+  <mvc:XMLView viewName="com.dsa157.ruok.Menu" id="Menu" />
+  <mvc:XMLView viewName="com.dsa157.ruok.Challenges" id="Challenges" />
+  <mvc:XMLView viewName="com.dsa157.ruok.Schedule" id="Schedule" />
+  <mvc:XMLView viewName="com.dsa157.ruok.Recipients" id="Recipients" />
+  <mvc:XMLView viewName="com.dsa157.ruok.Reports" id="Reports" />
+  <mvc:XMLView viewName="com.dsa157.ruok.Login" id="Login" />
+</App>
+</core:View>

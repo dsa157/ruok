@@ -1,0 +1,26 @@
+<core:View 
+	xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.dsa157.ruok.view.Login" xmlns:html="http://www.w3.org/1999/xhtml">
+	
+	<Page title="Login">
+		<content>
+			<HBox>
+				<Label text="ID:" class="label" />
+				<Input id="id"  />
+				
+			</HBox>
+			<HBox>
+				<Label text="PW:" class="label" />
+				<Input id="pw"  />
+				
+			</HBox>
+		</content>
+		<footer>
+				<Bar>
+        		<contentRight>
+					<Button id="b1" text="Login" press="onPressLogin" icon="sap-icon://log" />	
+        		</contentRight>
+        		</Bar>
+		</footer>
+	</Page>
+</core:View>

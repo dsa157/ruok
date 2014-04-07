@@ -1,0 +1,29 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="com.dsa157.ruok.view.Challenges" xmlns:l="sap.ui.layout" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Challenges">
+		<content>
+			<Label text="Challenges" />	
+			<VBox class="vb">
+				<HBox>
+		         <Image src="img/color.png" width="100px" height = "100px"/>
+		         <Image src="img/voice.png" width="100px" height = "100px" />
+        		</HBox>
+				<HBox>
+		         <Image src="img/math.png" width="100px" height = "100px"/>
+		         <Image src="img/math2.png" width="100px" height = "100px" />
+        		</HBox>
+				<HBox>
+		         <Image src="img/puzzle.png" width="100px" height = "100px"/>
+		         <Image src="img/words.png" width="100px" height = "100px" />
+        		</HBox>
+    		</VBox>
+		</content>
+        <footer>
+          <Bar>
+            <contentLeft>
+              <Button id="back" text="Back" press="onPressBack" icon="sap-icon://nav-back" />
+            </contentLeft>
+          </Bar>
+        </footer>
+	</Page>
+</core:View>

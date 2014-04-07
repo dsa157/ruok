@@ -1,0 +1,23 @@
+.centered {
+	margin:0px auto;
+}
+	
+.vb {
+	margin: 5px;
+	background-color: #ffddee;
+}
+	
+}.label {
+	width: 100px;
+	text-align: right;
+}
+
+.menuBtn {
+	width: 50%;
+	margin:0px auto;
+}
+
+.input {
+	width: 100px;
+	text-align: left;
+}
