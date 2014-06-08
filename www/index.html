@@ -5,6 +5,8 @@
 	  <meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
 		   
 	  <link rel="stylesheet" type="text/css" href="css/test.css" />
+      <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	  <script src="alarms.js" type="javascript" ></script>
 
 	  <script 
 	    id="sap-ui-bootstrap"
@@ -20,19 +22,9 @@
     	    alert("JavaScript error: " + message + " on line " + linenumber + " for " + url); }
 
 	    var bus = sap.ui.getCore().getEventBus();
-/*
-		var app = new sap.m.App({initialPage:"theApp"});
-		var pg = sap.ui.view({
-		  id:"theApp", 
-		  viewName:"com.dsa157.ruok.view.App", 
-		  type:sap.ui.core.mvc.ViewType.XML
-		});
-		app.addPage(pg);
-		app.placeAt("content");
-*/
-    		var appView = sap.ui.xmlview("appView", "com.dsa157.ruok.view.App");
-    		var app = appView.getController();
-    		appView.placeAt("content");
+	    var appView = sap.ui.xmlview("appView", "com.dsa157.ruok.view.App");
+	    var app = appView.getController();
+	    appView.placeAt("content");
 
 	  </script>
 

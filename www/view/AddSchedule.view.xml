@@ -1,0 +1,35 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="com.dsa157.ruok.view.AddSchedule" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Add Achedule">
+	  <content>
+	    <DateTimeInput type="Time" placeholder="Enter Time ..." />
+	    <HBox>
+	        <Label text="Repeat?" /> 
+    		<CheckBox text="M" />
+    		<CheckBox text="T" />
+    		<CheckBox text="W" />
+    		<CheckBox text="Th" />
+    		<CheckBox text="F" />
+    		<CheckBox text="S" />
+    		<CheckBox text="Su" />
+    		<CheckBox text="Daily" />
+  	    </HBox>
+	    <VBox>
+              <Button class="menuBtn" id="challenge" text="Challenge Type" press="onPressChallenge" icon="sap-icon://action" />
+              <Button class="menuBtn" id="alarm" text="Alarm Sound" press="onPressAlarm" icon="sap-icon://action" />
+	    </VBox>
+	
+	
+		</content>
+        <footer>
+          <Bar>
+            <contentLeft>
+              <Button id="back" text="Back" press="onPressBack" icon="sap-icon://nav-back" />
+            </contentLeft>
+            <contentRight>
+              <Button id="save" text="Save" press="onPressSave" icon="sap-icon://save" />
+            </contentRight>
+          </Bar>
+        </footer>
+	</Page>
+</core:View>

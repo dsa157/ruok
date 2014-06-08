@@ -37,7 +37,9 @@ sap.ui.controller("com.dsa157.ruok.view.Schedule", {
 
 	onPressBack: function(evt) {
 		app.navBack();
-	}
+	},
 
-
+	onPressAdd: function(evt) {
+    		app.navTo("AddSchedule", evt);
+  	},
 });

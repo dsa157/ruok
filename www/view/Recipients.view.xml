@@ -9,6 +9,9 @@
             <contentLeft>
               <Button id="back" text="Back" press="onPressBack" icon="sap-icon://nav-back" />
             </contentLeft>
+            <contentRight>
+              <Button id="add" text="Add" press="onPressAdd" icon="sap-icon://add" />
+            </contentRight>
           </Bar>
         </footer>
 	</Page>

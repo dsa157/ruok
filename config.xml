@@ -2,10 +2,11 @@
 <widget id="com.dsa157.ruok" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ruok</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+       RUOK - Remote Notifications with verification 
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
+    <author email="dsa157@gmail.com" href="http://www.dsa157.com">
+       David S April 
     </author>
     <content src="index.html" />
     <access origin="*" />
