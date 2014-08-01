@@ -1,80 +1,82 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
-  <TITLE>RUOK</TITLE>
-  <link rel="stylesheet" type="text/css" href="css/test.css" />
-  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-  <script src="alarms.js" type="javascript" ></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+<TITLE>RUOK</TITLE>
+<link rel="stylesheet" type="text/css" href="css/test.css" />
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script src="alarms.js" type="javascript"></script>
 
-  <script 
-	    id="sap-ui-bootstrap"
-	    src="./resources/sap-ui-core.js" 	
-	    data-sap-ui-libs="sap.m"
-	    data-sap-ui-resourceroots='{ "com.dsa157.ruok": "./" }'
-	    data-sap-ui-theme="sap_bluecrystal">
-  </script>
+<script id="sap-ui-bootstrap" 
+	src="./resources/sap-ui-core.js"
+	data-sap-ui-libs="sap.m"
+	data-sap-ui-resourceroots='{ "com.dsa157.ruok": "./" }'
+	data-sap-ui-theme="sap_bluecrystal">
+	
+</script>
 
-  <script>
-    window.onerror = function(message, url, linenumber) {
-    alert("JavaScript error: " + message + " on line " + linenumber + " for " + url); }
-    var bus = sap.ui.getCore().getEventBus();
-    var appView = sap.ui.xmlview("appView", "com.dsa157.ruok.view.App");
-    var app = appView.getController();
-    document.addEventListener('deviceready', function () {
-      init();
-    }, true);
+<script>
+	window.onerror = function(message, url, linenumber) {
+		alert("JavaScript error: " + message + " on line " + linenumber
+				+ " for " + url);
+	}
+	var bus = sap.ui.getCore().getEventBus();
+	var appView = sap.ui.xmlview("appView", "com.dsa157.ruok.view.App");
+	var app = appView.getController();
+	document.addEventListener('deviceready', function() {
+		init();
+	}, true);
 
-    function handleCancellAll() {
-      alert("cancel all");
-    }
+	function handleCancellAll() {
+		alert("cancel all");
+	}
 
-    function handleNotify(id) {
-      alert("clicked on notification " + id);
-    }
+	function handleNotify(id) {
+		alert("clicked on notification " + id);
+	}
 
-    function init() {
-      //var d = new Date(dateString);
-      var dt = new Date("2014", "07", "01", "06", "40", "0", "0");
-      //var def = window.plugin.notification.local.getDefaults(); 
-      //alert(JSON.stringify(def));
-      window.plugin.notification.local.add({ 
-        id: "11", 
-        sound: 'www/snd/clong.caf',
-        badge: "1", 
-        message: 'Great app!' 
-      });
+	function init() {
+		//var d = new Date(dateString);
+		var dt = new Date("2014", "07", "01", "06", "40", "0", "0");
+		//var def = window.plugin.notification.local.getDefaults(); 
+		//alert(JSON.stringify(def));
+		/*      window.plugin.notification.local.add({
+		 id: "11", 
+		 sound: 'www/snd/clong.caf',
+		 badge: "1", 
+		 message: 'Great app!' 
+		 });
+		 */
 
-      /*window.plugin.notification.local.onclick = function (id, state, json) {
-        handleNotify(id);
-      };
-      */
+		/*window.plugin.notification.local.onclick = function (id, state, json) {
+		  handleNotify(id);
+		};
+		 */
 
-      var now = new Date().getTime();
-      var soon = new Date(now + 5*1000);
-      window.plugin.notification.local.add({ 
-        id: "22", 
-        badge: "2", 
-        sound: 'www/snd/clong.caf',
-        date: soon,
-        message: 'Great app 2!' 
-      });
+		var now = new Date().getTime();
+		var soon = new Date(now + 5 * 1000);
+		/*
+		window.plugin.notification.local.add({ 
+		  id: "22", 
+		  badge: "2", 
+		  sound: 'www/snd/clong.caf',
+		  date: soon,
+		  message: 'Great app 2!' 
+		});
+		 */
 
-      window.plugin.notification.local.getScheduledIds( 
-        function (scheduledIds) {
-          //alert('Scheduled IDs: ' + scheduledIds.join(' ,'));
-        }
-      );
-      //window.plugin.notification.local.cancelAll("handleCancelAll", "");
-      appView.placeAt("content");
-    }
-
-
-  </script>
+		window.plugin.notification.local
+				.getScheduledIds(function(scheduledIds) {
+					//alert('Scheduled IDs: ' + scheduledIds.join(' ,'));
+				});
+		//window.plugin.notification.local.cancelAll("handleCancelAll", "");
+		appView.placeAt("content");
+	}
+</script>
 
 </head>
 <body class="sapUiBody" role="application">
-  <div id="content"></div>
+	<div id="content"></div>
 </body>
 </html>

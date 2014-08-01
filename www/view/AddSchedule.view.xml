@@ -3,17 +3,15 @@
 	<Page title="Add Schedule">
 	  <content>
         <Input id="msg" placeholder="Enter Reminder Message..." />
-	    <DateTimeInput id="dt" type="Time" placeholder="Enter Time ..." />
+	    <DateTimeInput id="dt" type="Time" placeholder="Enter Reminder Time ..." />
 	    <HBox>
-	        <Label text="Repeat?" /> 
-    		<CheckBox id="rptM" text="M" />
-    		<CheckBox id="rptT" text="T" />
-    		<CheckBox id="rptW" text="W" />
+    		<CheckBox id="rptM" text="Mo" />
+    		<CheckBox id="rptT" text="Tu" />
+    		<CheckBox id="rptW" text="We" />
     		<CheckBox id="rptTh" text="Th" />
-    		<CheckBox id="rptF" text="F" />
-    		<CheckBox id="rptSa" text="S" />
+    		<CheckBox id="rptF" text="Fr" />
+    		<CheckBox id="rptSa" text="Sa" />
     		<CheckBox id="rptSu" text="Su" />
-    		<CheckBox text="Daily" />
   	    </HBox>
 	    <VBox>
               <Button class="menuBtn" id="challenge" text="Challenge Type" press="onPressChallenge" icon="sap-icon://action" />
