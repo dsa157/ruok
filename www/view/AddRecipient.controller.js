@@ -25,14 +25,18 @@ sap.ui.controller("com.dsa157.ruok.view.AddRecipient", {
 	},
 
 	onPressSearch: function(evt) {
+		alert("test");
 		var view = this.getView();
-		var val = view.byId('searchContactsField').getValue();
-		var options = new ContactFindOptions();
+		var ctrl = view.byId('search');
+		var val = ctrl.getValue();
+		alert(val);
+/*		var options = new ContactFindOptions();
 		options.filter = val;
 		options.multiple = true;
 		var fields = ["name"];
 		navigator.contacts.find(fields, this.onSearchSuccess, this.onSearchError, options);
-	},
+*/
+		},
 
 	onSearchSuccess: function(contacts) {
 		for (var i = 0; i < contacts.length; i++) {

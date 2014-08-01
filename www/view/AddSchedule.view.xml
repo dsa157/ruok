@@ -1,17 +1,18 @@
 <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
 		controllerName="com.dsa157.ruok.view.AddSchedule" xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="Add Achedule">
+	<Page title="Add Schedule">
 	  <content>
-	    <DateTimeInput type="Time" placeholder="Enter Time ..." />
+        <Input id="msg" placeholder="Enter Reminder Message..." />
+	    <DateTimeInput id="dt" type="Time" placeholder="Enter Time ..." />
 	    <HBox>
 	        <Label text="Repeat?" /> 
-    		<CheckBox text="M" />
-    		<CheckBox text="T" />
-    		<CheckBox text="W" />
-    		<CheckBox text="Th" />
-    		<CheckBox text="F" />
-    		<CheckBox text="S" />
-    		<CheckBox text="Su" />
+    		<CheckBox id="rptM" text="M" />
+    		<CheckBox id="rptT" text="T" />
+    		<CheckBox id="rptW" text="W" />
+    		<CheckBox id="rptTh" text="Th" />
+    		<CheckBox id="rptF" text="F" />
+    		<CheckBox id="rptSa" text="S" />
+    		<CheckBox id="rptSu" text="Su" />
     		<CheckBox text="Daily" />
   	    </HBox>
 	    <VBox>

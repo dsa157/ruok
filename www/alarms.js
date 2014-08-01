@@ -1,6 +1,6 @@
 dsa157.alarm("com.dsa157.ruok.alarm", {
 
-  add: function() {
+  add: function(id1, dt, msg, ttl, rpt, bdg, jsn, autoc, ong) {
 /*
    window.plugin.notification.local.add({
     id:         String,  // A unique id of the notifiction
@@ -15,17 +15,18 @@ dsa157.alarm("com.dsa157.ruok.alarm", {
     ongoing:    Boolean, // Prevent clearing of notification (Android only)
    });
 */
+   alert(dt);
    window.plugin.notification.local.add({
-	id: '123',
+	id: id1,
 	date: dt,
-	message: 'dsa test notif',
-	title: 'ruok?',
-	repeat: '',
-	badge: 2,
-	json: {'test': 'testABC' },
-	autoCancel: false,
-	ongoing: false
+	message: msg,
+	title: ttl,
+	repeat: rpt,
+	badge: bdg,
+	json: jsn,
+	autoCancel: autoc,
+	ongoing: ong
    });
-
+   alert("done");
   }
 };
