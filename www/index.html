@@ -4,12 +4,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
 <TITLE>RUOK</TITLE>
-<link rel="stylesheet" type="text/css" href="css/test.css" />
+<link rel="stylesheet" type="text/css" href="css/ruok.css" />
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script src="alarms.js" type="javascript"></script>
 
-<script id="sap-ui-bootstrap" 
-	src="./resources/sap-ui-core.js"
+<script id="sap-ui-bootstrap" src="./resources/sap-ui-core.js"
 	data-sap-ui-libs="sap.m"
 	data-sap-ui-resourceroots='{ "com.dsa157.ruok": "./" }'
 	data-sap-ui-theme="sap_bluecrystal">
@@ -17,6 +16,11 @@
 </script>
 
 <script>
+	function bind(scope, fn) {
+		return function() {
+			fn.apply(scope, arguments);
+		};
+	}
 	window.onerror = function(message, url, linenumber) {
 		alert("JavaScript error: " + message + " on line " + linenumber
 				+ " for " + url);

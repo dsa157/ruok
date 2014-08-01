@@ -3,7 +3,8 @@
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="Add Recipient">
 		<content>
-		<SearchField id="search" width="100%" class="marginAll" search="onPressSearch" />
+			<SearchField id="contactSearch" width="100%" class="marginAll" search="onPressSearch" />
+			<VBox id="vbox" />
 		</content>
 		<footer>
 			<Bar>

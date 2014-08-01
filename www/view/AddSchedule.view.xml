@@ -5,13 +5,13 @@
         <Input id="msg" placeholder="Enter Reminder Message..." />
 	    <DateTimeInput id="dt" type="Time" placeholder="Enter Reminder Time ..." />
 	    <HBox>
-    		<CheckBox id="rptM" text="Mo" />
-    		<CheckBox id="rptT" text="Tu" />
-    		<CheckBox id="rptW" text="We" />
-    		<CheckBox id="rptTh" text="Th" />
-    		<CheckBox id="rptF" text="Fr" />
-    		<CheckBox id="rptSa" text="Sa" />
-    		<CheckBox id="rptSu" text="Su" />
+    		<CheckBox id="Mo" text="Mo" />
+    		<CheckBox id="Tu" text="Tu" />
+    		<CheckBox id="We" text="We" />
+    		<CheckBox id="Th" text="Th" />
+    		<CheckBox id="Fr" text="Fr" />
+    		<CheckBox id="Sa" text="Sa" />
+    		<CheckBox id="Su" text="Su" />
   	    </HBox>
 	    <VBox>
               <Button class="menuBtn" id="challenge" text="Challenge Type" press="onPressChallenge" icon="sap-icon://action" />

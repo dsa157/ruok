@@ -41,6 +41,18 @@ sap.ui.controller("com.dsa157.ruok.view.AddSchedule", {
 		return dt;
 	},
 	
+	getRepeatStr: function() {
+		var str = "";
+		str += this.byId("Mo").getSelected() ? "Mo " : "";
+		str += this.byId("Tu").getSelected() ? "Tu " : "";
+		str += this.byId("We").getSelected() ? "We " : "";
+		str += this.byId("Th").getSelected() ? "Th " : "";
+		str += this.byId("Fr").getSelected() ? "Fr " : "";
+		str += this.byId("Sa").getSelected() ? "Sa " : "";
+		str += this.byId("Su").getSelected() ? "Su " : "";
+		return str;
+	},
+	
 	getTimeStr: function() {
 		var timeStr = this.byId('dt').getValue();
 		if (timeStr == "") {
@@ -56,13 +68,16 @@ sap.ui.controller("com.dsa157.ruok.view.AddSchedule", {
 	},
 
 	onPressSave: function(evt) {
+		var repeatDays = this.getRepeatStr();
 		var id = this.getTimeStr();
 		var msg = this.getMessage();
 		var dt = this.getDate();
+		
 		//alert(dt);
 		var obj = {
 				"id": id,
 				"repeat": "daily",
+				"repeatDays": repeatDays,
 				"date": dt,
 				"sound": "./snd/clong.caf",
 				"message": msg

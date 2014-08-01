@@ -51,6 +51,9 @@ sap.ui.controller("com.dsa157.ruok.view.Schedule", {
 						li.setTitle(obj.id);
 						var attr = new sap.m.ObjectAttribute();
 						attr.setText(obj.message);
+						var status = new sap.m.ObjectStatus();
+						status.setText(obj.repeatDays);
+						li.setFirstStatus(status);
 						li.addAttribute(attr);
 						//alert("n1=" + notifObject.id);
 						list.addItem(li);
@@ -90,20 +93,24 @@ sap.ui.controller("com.dsa157.ruok.view.Schedule", {
 		min = (min < 10) ? "0" + min : min;
 		var id = hrs + ":" + min + " " + ampm;	
 		var msg = "test 123";
-		var notifObject = {
+		var obj = {
 				"id": id,
+				"repeat": "daily",
+				"repeatDays": "Fr ",
+				"date": dt,
+				"sound": "./snd/clong.caf",
 				"message": msg
 		};
-		//alert("n=" + notifObject.message);
-		alert("n2=" + JSON.stringify(notifObject));
-		localStorage.setItem(id, JSON.stringify(notifObject));
+		//alert("n=" + obj.message);
+		//alert("n2=" + JSON.stringify(obj));
+		localStorage.setItem(id, JSON.stringify(obj));
 		var x = JSON.parse(localStorage.getItem(id));
 		//alert("x=" + x);
-		alert("x2=" + JSON.stringify(x));
+		//alert("x2=" + JSON.stringify(x));
 
 		window.plugin.notification.local.add({
-			"id": id,
-			"message": msg
+			"id": obj.id,
+			"message": obj.message
 		});
 		this.populateList();
 	},
