@@ -10,10 +10,10 @@
               <Button id="back" text="" press="onPressBack" icon="sap-icon://nav-back" />
             </contentLeft>
             <contentRight>
-              <Button id="auto" text="Auto" press="onPressAutoAdd" icon="sap-icon://add" />
+              <Button id="auto" text="Test" press="onPressAutoAdd" icon="sap-icon://add" />
               <Button id="clear" text="" press="onPressClear" icon="sap-icon://delete" />
-              <Button id="test" text="" press="onPressTest" icon="sap-icon://edit" />
-              <Button id="add" text="" press="onPressAdd" icon="sap-icon://add" />
+              <Button id="refresh" text="" press="onPressRefresh" icon="sap-icon://refresh" />
+              <Button id="add" text="Add" press="onPressAdd" icon="sap-icon://add" />
             </contentRight>
           </Bar>
         </footer>

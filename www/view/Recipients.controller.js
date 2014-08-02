@@ -18,7 +18,7 @@ sap.ui.controller("com.dsa157.ruok.view.Recipients", {
 		var list = new sap.m.List({ id: "recipientList" });
 		var vbox = this.byId("vbox");
 		vbox.addItem(list);
-		this.populateList();
+		this.refresh();
 	},
 
 	/**
@@ -38,8 +38,8 @@ sap.ui.controller("com.dsa157.ruok.view.Recipients", {
 
 //	}
 
-	populateList: function() {
-		debugger
+	refresh: function() {
+		//debugger
 		var list = sap.ui.getCore().byId("recipientList");
 		list.destroyItems();
 		var recipients = JSON.parse(localStorage.getItem("recipients"));
@@ -59,11 +59,11 @@ sap.ui.controller("com.dsa157.ruok.view.Recipients", {
 
 	onPressClear: function(evt) {
 		localStorage.setItem("recipients", JSON.stringify({}));
-		this.populateList();
+		this.refresh();
 	},
 
-	onPressTest: function(evt) {
-		this.populateList();
+	onPressRefresh: function(evt) {
+		this.refresh();
 	},
 
 	onPressBack: function(evt) {
@@ -71,6 +71,7 @@ sap.ui.controller("com.dsa157.ruok.view.Recipients", {
 	},
 
 	onPressAdd: function(evt) {
+		app.prevController = this;
 		app.navTo("AddRecipient", evt);
 	},
 

@@ -11,7 +11,7 @@
             </contentLeft>
             <contentRight>
               <Button id="clear" text="" press="onPressClear" icon="sap-icon://delete" />
-              <Button id="test" text="" press="onPressTest" icon="sap-icon://edit" />
+              <Button id="refresh" text="" press="onPressRefresh" icon="sap-icon://refresh" />
               <Button id="add" text="" press="onPressAdd" icon="sap-icon://add" />
             </contentRight>
           </Bar>

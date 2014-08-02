@@ -25,7 +25,7 @@ sap.ui.controller("com.dsa157.ruok.view.AddRecipient", {
 	},
 
 	onPressSave: function(evt) {
-		debugger
+		//debugger
 		var list = sap.ui.getCore().byId("contactSearchList");
 		var selectedItems = list.getSelectedItems();
 		var recipients = JSON.parse(localStorage.getItem("recipients"));

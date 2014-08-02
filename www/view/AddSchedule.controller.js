@@ -78,20 +78,23 @@ sap.ui.controller("com.dsa157.ruok.view.AddSchedule", {
 				"id": id,
 				"repeat": "daily",
 				"repeatDays": repeatDays,
+				"badge": "1",
 				"date": dt,
 				"sound": "./snd/clong.caf",
 				"message": msg
 		};
 		
 		localStorage.setItem(id, JSON.stringify(obj));
-
+		debugger
 		window.plugin.notification.local.add({
-			"id": obj.id,
-			"repeat": obj.repeat,
-			"date": obj.date,
-			"sound": obj.sound,
-			"message": obj.message
-		});
+			"id": id,
+			"repeat": "daily",
+			"repeatDays": repeatDays,
+			"badge": "1",
+			"date": dt,
+			"sound": "./snd/clong.caf",
+			"message": msg
+		}, window.handleAdd);
 		app.navBack();
 	}
 

@@ -47,16 +47,20 @@ sap.ui.controller("com.dsa157.ruok.view.Schedule", {
 						var str = scheduledIds[i];
 						var li = new sap.m.ObjectListItem();
 						//alert("str=" + str);
-						var obj = JSON.parse(localStorage.getItem(str));
-						li.setTitle(obj.id);
-						var attr = new sap.m.ObjectAttribute();
-						attr.setText(obj.message);
-						var status = new sap.m.ObjectStatus();
-						status.setText(obj.repeatDays);
-						li.setFirstStatus(status);
-						li.addAttribute(attr);
-						//alert("n1=" + notifObject.id);
-						list.addItem(li);
+						//debugger
+						var item = localStorage.getItem(str);
+						if (item != null) {
+							var obj = JSON.parse(localStorage.getItem(str));
+							li.setTitle(obj.id);
+							var attr = new sap.m.ObjectAttribute();
+							attr.setText(obj.message);
+							var status = new sap.m.ObjectStatus();
+							status.setText(obj.repeatDays);
+							li.setFirstStatus(status);
+							li.addAttribute(attr);
+							//alert("n1=" + notifObject.id);
+							list.addItem(li);
+						}
 					}
 				}
 		);
@@ -66,7 +70,7 @@ sap.ui.controller("com.dsa157.ruok.view.Schedule", {
 		app.navBack();
 	},
 
-	onPressTest: function(evt) {
+	onPressRefresh: function(evt) {
 		this.populateList();
 	},
 
@@ -86,36 +90,42 @@ sap.ui.controller("com.dsa157.ruok.view.Schedule", {
 
 	onPressAutoAdd: function(evt) {
 		var dt = new Date();
+		//alert(dt);
+		var soon = dt.getTime() + (15*1000);	// 15 seconds from now...
+		dt.setTime(soon);		
+
 		var hrs = dt.getHours();
 		var min = dt.getMinutes();
 		var ampm = (hrs > 12) ? "PM" : "AM";
 		hrs = (hrs > 12) ? hrs-12 : hrs;
 		min = (min < 10) ? "0" + min : min;
 		var id = hrs + ":" + min + " " + ampm;	
-		var msg = "test 123";
+		var msg = "test alert " + id;
+		//debugger
 		var obj = {
 				"id": id,
 				"repeat": "daily",
 				"repeatDays": "Fr ",
 				"date": dt,
+				"badge": "1",
 				"sound": "./snd/clong.caf",
 				"message": msg
 		};
-		//alert("n=" + obj.message);
-		//alert("n2=" + JSON.stringify(obj));
 		localStorage.setItem(id, JSON.stringify(obj));
-		var x = JSON.parse(localStorage.getItem(id));
-		//alert("x=" + x);
-		//alert("x2=" + JSON.stringify(x));
-
 		window.plugin.notification.local.add({
-			"id": obj.id,
-			"message": obj.message
-		});
-		this.populateList();
+			"id": id,
+			"repeat": "daily",
+			"repeatDays": "Fr ",
+			"date": dt,
+			"badge": "1",
+			"sound": "./snd/clong.caf",
+			"message": msg
+		}, this.populateList);
+		//this.populateList();
 	},
 
 	onPressAdd: function(evt) {
+		app.prevController = this;
 		app.navTo("AddSchedule", evt);
 	},
 });
