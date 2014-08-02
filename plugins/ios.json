@@ -10,7 +10,8 @@
                 "<feature name=\"LocalNotification\"><param name=\"ios-package\" onload=\"true\" value=\"APPLocalNotification\" /><param name=\"onload\" value=\"true\" /></feature>": 1,
                 "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>": 1,
                 "<feature name=\"Contacts\"><param name=\"ios-package\" value=\"CDVContacts\" /></feature>": 1,
-                "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>": 1
+                "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>": 1,
+                "<feature name=\"Sms\"><param name=\"ios-package\" value=\"Sms\" /></feature>": 1
             }
         },
         "framework": {
@@ -24,6 +25,9 @@
                 "false": 1
             },
             "AudioToolbox.framework": {
+                "true": 1
+            },
+            "MessageUI.framework": {
                 "true": 1
             }
         }
@@ -39,6 +43,9 @@
             "PACKAGE_NAME": "com.dsa157.ruok"
         },
         "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "com.dsa157.ruok"
+        },
+        "com.jsmobile.plugins.sms": {
             "PACKAGE_NAME": "com.dsa157.ruok"
         }
     },
