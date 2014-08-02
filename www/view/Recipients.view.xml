@@ -2,7 +2,7 @@
 		controllerName="com.dsa157.ruok.view.Recipients" xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="Recipients">
 		<content>
-			<Label text="Recipients" />	
+			<VBox id="vbox" />	
 		</content>
         <footer>
           <Bar>
@@ -10,7 +10,9 @@
               <Button id="back" text="Back" press="onPressBack" icon="sap-icon://nav-back" />
             </contentLeft>
             <contentRight>
-              <Button id="add" text="Add" press="onPressAdd" icon="sap-icon://add" />
+              <Button id="clear" text="" press="onPressClear" icon="sap-icon://delete" />
+              <Button id="test" text="" press="onPressTest" icon="sap-icon://edit" />
+              <Button id="add" text="" press="onPressAdd" icon="sap-icon://add" />
             </contentRight>
           </Bar>
         </footer>

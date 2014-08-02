@@ -6,6 +6,7 @@
 <TITLE>RUOK</TITLE>
 <link rel="stylesheet" type="text/css" href="css/ruok.css" />
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8" src="utils.js"></script>
 <script src="alarms.js" type="javascript"></script>
 
 <script id="sap-ui-bootstrap" src="./resources/sap-ui-core.js"
@@ -16,15 +17,6 @@
 </script>
 
 <script>
-	function bind(scope, fn) {
-		return function() {
-			fn.apply(scope, arguments);
-		};
-	}
-	window.onerror = function(message, url, linenumber) {
-		alert("JavaScript error: " + message + " on line " + linenumber
-				+ " for " + url);
-	}
 	var bus = sap.ui.getCore().getEventBus();
 	var appView = sap.ui.xmlview("appView", "com.dsa157.ruok.view.App");
 	var app = appView.getController();
@@ -32,49 +24,7 @@
 		init();
 	}, true);
 
-	function handleCancellAll() {
-		alert("cancel all");
-	}
-
-	function handleNotify(id) {
-		alert("clicked on notification " + id);
-	}
-
 	function init() {
-		//var d = new Date(dateString);
-		var dt = new Date("2014", "07", "01", "06", "40", "0", "0");
-		//var def = window.plugin.notification.local.getDefaults(); 
-		//alert(JSON.stringify(def));
-		/*      window.plugin.notification.local.add({
-		 id: "11", 
-		 sound: 'www/snd/clong.caf',
-		 badge: "1", 
-		 message: 'Great app!' 
-		 });
-		 */
-
-		/*window.plugin.notification.local.onclick = function (id, state, json) {
-		  handleNotify(id);
-		};
-		 */
-
-		var now = new Date().getTime();
-		var soon = new Date(now + 5 * 1000);
-		/*
-		window.plugin.notification.local.add({ 
-		  id: "22", 
-		  badge: "2", 
-		  sound: 'www/snd/clong.caf',
-		  date: soon,
-		  message: 'Great app 2!' 
-		});
-		 */
-
-		window.plugin.notification.local
-				.getScheduledIds(function(scheduledIds) {
-					//alert('Scheduled IDs: ' + scheduledIds.join(' ,'));
-				});
-		//window.plugin.notification.local.cancelAll("handleCancelAll", "");
 		appView.placeAt("content");
 	}
 </script>

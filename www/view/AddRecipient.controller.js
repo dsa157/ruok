@@ -1,5 +1,7 @@
 sap.ui.controller("com.dsa157.ruok.view.AddRecipient", {
 
+	contactList: null,
+	
 	onInit: function() {
 		var tbl = new sap.m.List({ id: "contactSearchList" });
 		var vbox = this.byId("vbox");
@@ -23,7 +25,25 @@ sap.ui.controller("com.dsa157.ruok.view.AddRecipient", {
 	},
 
 	onPressSave: function(evt) {
-		//app.navBack();
+		debugger
+		var list = sap.ui.getCore().byId("contactSearchList");
+		var selectedItems = list.getSelectedItems();
+		var recipients = JSON.parse(localStorage.getItem("recipients"));
+		//alert("recipients=" + recipients);
+		if (isEmpty(recipients)) {
+			//alert("oops - no recipients yet...");
+			recipients = {};
+		}
+		for (var i = 0; i < selectedItems.length; i++) {
+			var li = selectedItems[i];
+			var contact = li.data("data");
+			var id = "c-" + contact.id;
+			recipients[id]=contact;	
+		}
+		localStorage.setItem("recipients", JSON.stringify(recipients));
+		//alert(recipients.length);
+
+		app.navBack();
 	},
 
 	onPressSearch: function(evt) {
@@ -37,6 +57,7 @@ sap.ui.controller("com.dsa157.ruok.view.AddRecipient", {
 	},
 
 	onSearchSuccess: function(contacts) {
+		contactList = contacts;
 		var list = sap.ui.getCore().byId("contactSearchList");
 		list.destroyItems();
 		var ctrl = this.getView().byId("contactSearch");
@@ -48,13 +69,8 @@ sap.ui.controller("com.dsa157.ruok.view.AddRecipient", {
 		//tbl.addColumn(colName);
 		for (var i = 0; i < contacts.length; i++) {
 			var li = new sap.m.ObjectListItem();
-			//li.addCell(new sap.m.Text({ text: contacts[i].name.formatted}))
-
-//			var name = new sap.m.Text();
-//			name.setText(contacts[i].name.formatted);
 			li.setTitle(contacts[i].name.formatted);
-			//li.addCell(name);
-			//alert(JSON.stringify(contacts[i]));
+			li.data("data", contacts[i]);
 			list.addItem(li);
 		}
 		list.setMode(sap.m.ListMode.MultiSelect);
@@ -63,6 +79,4 @@ sap.ui.controller("com.dsa157.ruok.view.AddRecipient", {
 	onSearchError: function(contactError) {
 		alert('onError!');
 	}
-
-
 });

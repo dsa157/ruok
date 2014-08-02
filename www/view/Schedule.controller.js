@@ -15,7 +15,7 @@ sap.ui.controller("com.dsa157.ruok.view.Schedule", {
 	 * @memberOf com.dsa157.ruok.Schedule
 	 */
 	onBeforeRendering: function() {
-		var list = new sap.m.List({ id: "list1" });
+		var list = new sap.m.List({ id: "scheduleList" });
 		var vbox = this.byId("vbox");
 		vbox.addItem(list);
 		this.populateList();
@@ -41,7 +41,7 @@ sap.ui.controller("com.dsa157.ruok.view.Schedule", {
 	populateList: function() {
 		window.plugin.notification.local.getScheduledIds(
 				function (scheduledIds) {
-					var list = sap.ui.getCore().byId("list1");
+					var list = sap.ui.getCore().byId("scheduleList");
 					list.destroyItems();
 					for (var i=0; i<scheduledIds.length; i++) {
 						var str = scheduledIds[i];
