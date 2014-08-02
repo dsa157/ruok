@@ -10,14 +10,16 @@
                 "<feature name=\"LocalNotification\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.localnotification.LocalNotification\" /></feature>": 1,
                 "<feature name=\"Contacts\"><param name=\"android-package\" value=\"org.apache.cordova.contacts.ContactManager\" /></feature>": 1,
                 "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>": 1,
-                "<feature name=\"Sms\"><param name=\"android-package\" value=\"com.jsmobile.plugins.sms.Sms\" /></feature>": 1
+                "<feature name=\"Sms\"><param name=\"android-package\" value=\"com.jsmobile.plugins.sms.Sms\" /></feature>": 1,
+                "<feature name=\"EmailComposer\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.emailcomposer.EmailComposer\" /></feature>": 1
             }
         },
         "AndroidManifest.xml": {
             "/manifest/application": {
                 "<receiver android:name=\"de.appplant.cordova.plugin.localnotification.Receiver\" />": 1,
                 "<receiver android:name=\"de.appplant.cordova.plugin.localnotification.Restore\"><intent-filter><action android:name=\"android.intent.action.BOOT_COMPLETED\" /></intent-filter></receiver>": 1,
-                "<activity android:launchMode=\"singleInstance\" android:name=\"de.appplant.cordova.plugin.localnotification.ReceiverActivity\" />": 1
+                "<activity android:launchMode=\"singleInstance\" android:name=\"de.appplant.cordova.plugin.localnotification.ReceiverActivity\" />": 1,
+                "<provider android:authorities=\"com.dsa157.ruok.plugin.emailcomposer.attachmentprovider\" android:name=\"de.appplant.cordova.plugin.emailcomposer.AttachmentProvider\"></provider>": 1
             },
             "/manifest": {
                 "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\" />": 1,
@@ -44,6 +46,9 @@
             "PACKAGE_NAME": "com.dsa157.ruok"
         },
         "com.jsmobile.plugins.sms": {
+            "PACKAGE_NAME": "com.dsa157.ruok"
+        },
+        "de.appplant.cordova.plugin.email-composer": {
             "PACKAGE_NAME": "com.dsa157.ruok"
         }
     },
